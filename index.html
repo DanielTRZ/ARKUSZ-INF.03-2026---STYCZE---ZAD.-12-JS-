@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Tatuaże</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+
+    <header class="naglowek1">
+        <img src="\PlikiSt202612\logo1.png" alt="salon">
+    </header>
+
+    <header class="naglowek2">
+        <h1>Studio Tatuażu</h1>
+    </header>
+
+    <section>
+        <h2>Galeria</h2>
+        <img src="\PlikiSt202612\smok.png" alt="smok.png" class="miniatury">
+        <img src="\PlikiSt202612\koliber.png" alt="koliber.png" class="miniatury">
+    </section>
+
+    <aside>
+        <h3>Dodaj wzór</h3>
+        <label for="plik">Wzór:</label><br>
+        <input type="file" id="plik" accept="image/png"><br>
+        
+        <label for="kolor">Kolor:</label><br>
+        <select id="kolor">
+            <option>Czarny</option>
+            <option>Czerwony</option>
+            <option>Zielony</option>
+            <option>Niebieski</option>
+        </select><br>
+
+        <label for="cena">Cena:</label><br>
+        <input type="number" id="cena"><br>
+
+        <button onclick="dodajWzor()">Dodaj Wzór</button>
+    </aside>
+
+    <footer>
+        <p>Autor strony: 01234567890</p>
+    </footer>
+
+    <script>
+        function dodajWzor() {
+            const inputPlik = document.getElementById('plik');
+            const selectKolor = document.getElementById('kolor');
+            const inputCena = document.getElementById('cena');
+            const sekcja = document.querySelector('section');
+
+            let nazwaPliku = "";
+            if (inputPlik.files && inputPlik.files[0]) {
+                nazwaPliku = inputPlik.files[0].name;
+            }
+
+            let kolor = selectKolor.value;
+            let cena = inputCena.value;
+
+            alert("Wzór: " + nazwaPliku + ", kolor " + kolor + " w cenie " + cena + " zł");
+
+            if (nazwaPliku) {
+                let nowyObraz = document.createElement('img');
+                nowyObraz.src = "\\PlikiSt202612\\" + nazwaPliku;
+                nowyObraz.alt = nazwaPliku;
+                nowyObraz.className = 'miniatury';
+                sekcja.appendChild(nowyObraz);
+            }
+        }
+    </script>
+</body>
+</html>

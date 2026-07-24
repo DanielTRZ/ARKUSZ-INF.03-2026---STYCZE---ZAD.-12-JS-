@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'Dancing Script';
+    src: url('PlikiSt202612/czcionki/DancingScript-Regular.woff') format('woff'),
+         url('PlikiSt202612/czcionki/DancingScript-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Dancing Script', serif;
+    font-size: 120%;
+    text-align: center;
+}
+
+.naglowek1 {
+    background-color: RosyBrown;
+    width: 30%;
+    float: left;
+}
+
+/* Kluczowa zmiana: obrazek dopasowuje się do szerokości bloku (30%), zachowując proporcje */
+.naglowek1 img {
+    width: 100%;
+    height: auto;
+    display: block;
+    padding-bottom: 20px;
+    
+}
+
+.naglowek2 {
+    background-color: RosyBrown;
+    width: 70%;
+    height: 100px;
+    float: right;
+}
+
+section {
+    width: 70%;
+    height: 550px;
+    overflow: scroll;
+    float: right;
+}
+
+aside {
+    background-color: RosyBrown;
+    width: 30%;
+    height: 360px;
+    text-align: left;
+    float: left;
+}
+
+label {
+    line-height: 50px;
+}
+
+.miniatury {
+    width: 150px;
+    transition: width 1s;
+}
+
+.miniatury:hover {
+    background-color: Bisque;
+    width: 200px;
+}
+
+footer {
+    clear: both;
+}
+/* Zmuszenie elementów formularza, żeby nigdy nie wychodziły poza różowy panel */
+aside input[type="file"],
+aside select,
+aside input[type="number"] {
+    width: 90%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+
+
+
+

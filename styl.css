@@ -15,7 +15,6 @@ body {
     width: 30%;
     float: left;
 }
-
 /* Kluczowa zmiana: obrazek dopasowuje się do szerokości bloku (30%), zachowując proporcje */
 .naglowek1 img {
     width: 100%;
